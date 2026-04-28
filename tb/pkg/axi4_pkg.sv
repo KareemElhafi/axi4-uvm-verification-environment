@@ -1,8 +1,5 @@
 // =============================================================================
 // File        : axi4_pkg.sv
-// FIX #10/#16 : axi4_types.sv included FIRST so AXI enums and typedefs are
-//               visible to every subsequent file without circular dependencies.
-//               Include order matches the dependency graph strictly.
 // =============================================================================
 
 `ifndef AXI4_PKG_SV
