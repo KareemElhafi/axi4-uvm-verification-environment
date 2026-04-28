@@ -1,11 +1,6 @@
 // =============================================================================
 // Module      : axi4
 // Description : AXI4-compliant memory-mapped slave.
-//
-// FIX #4 — Boundary formula corrected to (AWLEN+1)*(1<<AWSIZE).
-//           Boundary/range checks evaluated at address-accept time using
-//           REGISTERED copies of address/len/size (captured_*), so they
-//           remain correct after the master removes AW/AR channel signals.
 // =============================================================================
 `timescale 1ns/1ps
 
@@ -71,7 +66,6 @@ module axi4 #(
     assign read_addr_incr  = ADDR_WIDTH'(1) << read_size;
 
     // -------------------------------------------------------------------------
-    // FIX #4: Combinational helpers — evaluated at address-channel time.
     // Formula: byte_span = (LEN+1) * (1<<SIZE)
     // Boundary cross when: addr_offset + byte_span > 4096
     // -------------------------------------------------------------------------
