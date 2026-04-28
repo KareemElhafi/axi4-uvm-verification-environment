@@ -1,8 +1,5 @@
 // =============================================================================
 // File        : axi4_types.sv
-// FIX #10     : All shared enums and typedefs live here.
-//               Included FIRST in axi4_pkg.sv so every component sees them
-//               without depending on axi4_transaction.sv.
 // =============================================================================
 
 `ifndef AXI4_TYPES_SV
